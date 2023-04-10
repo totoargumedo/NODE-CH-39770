@@ -1,3 +1,5 @@
+import { randomUUID } from "crypto";
+
 export class ProductManager {
   // declaro variables privadas para el contador de id (como se guardan en memoria, no necesito revisar cual fue el ultimo) y el array en memoria.
   #products;
@@ -25,6 +27,7 @@ export class ProductManager {
       product.thumbnail ??
       "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700"; //Agrego un valor por defecto para thumbnail en caso de que se envie campo vacio
     this.#id++;
+    //const id = randomUUID(); //Para generar IDs aleatorios en lugar de consecutivos en memoria
     const newProduct = { id: this.#id, ...product };
     this.#products.push(newProduct);
     console.log(
