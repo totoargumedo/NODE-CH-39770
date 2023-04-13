@@ -16,13 +16,16 @@ export class ProductManager {
       !product.title ||
       !product.description ||
       !product.price ||
+      !product.code ||
       !product.thumbnail ||
       !product.stock
     ) {
       return console.log("Info in product missing");
     }
-    console.log(product);
-    console.log(product);
+    // revisamos si el campo code no este repetido entre los elementos que ya estan cargados.
+    if (this.#products.some((item) => item.code == product.code)) {
+      return console.log(`The code ${product.code} already exists`);
+    }
     product.thumbnail =
       product.thumbnail ??
       "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700"; //Agrego un valor por defecto para thumbnail en caso de que se envie campo vacio
