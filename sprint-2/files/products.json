@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Pendrive Kingston 32GB",
+    "description": "Pendrive 32GB Kingston Rojo con tapita",
+    "price": 2550,
+    "code": "KNG32GB",
+    "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
+    "stock": 450
+  },
+  {
+    "id": 2,
+    "title": "Pendrive Kingston 64GB",
+    "description": "Pendrive 64GB Kingston Rojo con tapita",
+    "price": 4100,
+    "code": "KNG64GB",
+    "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
+    "stock": 450
+  }
+]
