@@ -11,6 +11,7 @@ productos.addProduct({
   titles: "Pendrive Kingston 16GB",
   description: "Pendrive 16GB Kingston Rojo con tapita",
   price: 1890,
+  code: "KNG16GB",
   thumbnail: "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
   stock: 450,
 });
@@ -18,6 +19,7 @@ productos.addProduct({
   title: "Pendrive Kingston 32GB",
   description: "Pendrive 32GB Kingston Rojo con tapita",
   price: 2550,
+  code: "KNG32GB",
   thumbnail: "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
   stock: 450,
 });
@@ -25,6 +27,7 @@ productos.addProduct({
   title: "Pendrive Kingston 64GB",
   description: "Pendrive 64GB Kingston Rojo con tapita",
   price: 4100,
+  code: "KNG64GB",
   thumbnail: "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
   stock: 450,
 });
@@ -32,6 +35,15 @@ productos.addProduct({
   title: "Pendrive Kingston 128GB",
   description: "Pendrive 128GB Kingston Rojo con tapita",
   price: 7500,
+  code: "KNG128GB",
+  thumbnail: "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
+  stock: 450,
+});
+productos.addProduct({
+  title: "Pendrive Kingston 32GB",
+  description: "Pendrive 32GB Kingston Rojo con tapita",
+  price: 2550,
+  code: "KNG32GB",
   thumbnail: "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
   stock: 450,
 });
