@@ -7,91 +7,165 @@ export class ProductManager {
   #id;
   constructor(path) {
     this.#products = [];
-    this.#id = 0;
     this.path = path; //ruta al archivo que se creara
     this.init(path);
   }
 
   //inicializar el archivo de datos, en caso de no existir lo crea, caso contrario lo lee y lo carga al array
 
-  async init(path) {
+  init(path) {
     const fileExists = fs.existsSync(path);
     if (!fileExists) {
-      await fs.promises
-        .writeFile(path, "[]")
-        .then((res) => console.log("File created"))
-        .catch((err) => console.warn(err));
+      fs.writeFileSync(path, "[]");
+      //en caso de que el archivo no exista, id = 0
+      this.#id = 0;
+      console.log(`File created ${path}`);
+      return `File created ${path}`;
     } else {
-      await fs.promises
-        .readFile(path, "utf-8")
-        .then((res) => {
-          console.log("File read successfully");
-          const dataParsed = JSON.parse(res);
-          return dataParsed;
-        })
-        .then((res) => {
-          this.#products = res;
-        })
-        .catch((err) => console.warn(err));
+      const data = fs.readFileSync(path, "utf-8");
+      this.#products = JSON.parse(data);
+      //actualizamos el id al ultimo que encontremos en el que leimos, si no hay productos, vuelve a 0
+      if (this.#products.length > 0) {
+        this.#id = this.#products[this.#products.length - 1].id;
+      } else {
+        this.#id = 0;
+      }
+      console.log("File read successfully");
+      return "File read successfully";
     }
   }
 
   async write() {
-    const usersToSave = JSON.stringify(this.#products, null, 2);
-    await fs.promises
-      .writeFile(this.path, usersToSave)
-      .then((res) => console.log("File updated"))
-      .catch((err) => console.warn(err));
+    const usersJson = JSON.stringify(this.#products, null, 2);
+    try {
+      await fs.promises.writeFile(this.path, usersJson);
+      console.log("File updated");
+      return "witreFile: done";
+    } catch (err) {
+      console.warn(err);
+      return "writeFile: error";
+    }
   }
 
-  //Agrega producto al array en memoria, si falta algun campo devuelve un error por consola (solucion temporal) y no ingresa el producto
-
-  async addProduct(product) {
-    if (
-      !product.title ||
-      !product.description ||
-      !product.price ||
-      !product.code ||
-      !product.thumbnail
-    ) {
-      return console.log("addProduct: error");
+  //Agrega producto en el array en memoria y luego guarda en archivo
+  async addProduct({ title, description, price, code, thumbnail, stock }) {
+    try {
+      if (!title || !description || !price || !code || !thumbnail || !stock) {
+        return console.log("addProduct: error");
+      }
+      // revisamos si el campo code no este repetido entre los elementos que ya estan cargados.
+      if (this.#products.some((item) => item.code == code)) {
+        return console.log(`addProduct: error, ${code} already exists`);
+      }
+      //Campos por defecto
+      thumbnail =
+        thumbnail ?? "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700"; //Agrego un valor por defecto para thumbnail en caso de que se envie campo vacio
+      stock = stock ?? 0; //Si el campo stock no viene o viene vacio se convierte en 0
+      //Aumento el id en 1
+      this.#id++;
+      const newProduct = {
+        id: this.#id,
+        title,
+        description,
+        price,
+        code,
+        thumbnail,
+      };
+      this.#products.push(newProduct);
+      console.log(
+        `Producto ${newProduct.title} con id:${newProduct.id} agregado correctamente`
+      );
+      await this.write();
+      return newProduct.id;
+    } catch (err) {
+      console.warn(err);
+      return "addProduct: error";
     }
-    // revisamos si el campo code no este repetido entre los elementos que ya estan cargados.
-    if (this.#products.some((item) => item.code == product.code)) {
-      return console.log(`The code ${product.code} already exists`);
-    }
-    product.thumbnail =
-      product.thumbnail ??
-      "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700"; //Agrego un valor por defecto para thumbnail en caso de que se envie campo vacio
-    product.stock = product.stock ?? 0; //Si el campo stock no viene o viene vacio se convierte en 0
-    this.#id++;
-    //const id = randomUUID(); //Para generar IDs aleatorios en lugar de consecutivos en memoria
-    const newProduct = { id: this.#id, ...product };
-    this.#products.push(newProduct);
-    console.log(
-      `Producto ${newProduct.title} con id:${newProduct.id} agregado correctamente`
-    );
-    await this.write();
-    return newProduct.id;
   }
 
   //devuelve todos los productos en memoria
   getProducts() {
-    if (this.#products.length === 0) {
-      console.log("Not found");
+    try {
+      if (this.#products.length === 0) {
+        console.log("Not found");
+        return this.#products;
+      }
       return this.#products;
+    } catch (err) {
+      console.warn(err);
+      return "getProducts: error";
     }
-    return this.#products;
   }
 
   //devuelve un producto por id, en caso de no encontrarlo devuelve error
 
   getProductById(id) {
-    const productById = this.#products.find((product) => product.id == id);
-    if (!productById) {
-      console.log(`Product id:${id} Not Found`);
-    } else {
-      return productById;
+    try {
+      const productById = this.#products.find((product) => product.id == id);
+      if (!productById) {
+        return null;
+      } else {
+        return productById;
+      }
+    } catch (err) {
+      console.warn(err);
+      return "getProductById: error";
+    }
+  }
+
+  //Actualiza un del array en memoria y luego lo guarda en el archivo
+  async updateProduct(id, product) {
+    try {
+      //busco producto reutilizando metodo
+      const productFound = this.getProductById(id); // tambien puedo utilizar un filter sobre this-#products
+      //En caso de no encontrar el producto
+      if (!productFound) {
+        return "Not found";
+      }
+      //verifico si recibo valores para actualizar
+      if (Object.keys(product) === 0) {
+        return "updateProduct: error, no values to update";
+      }
+      //sobreescribo los valores de las propiedades
+      for (let property in product) {
+        //reviso si los valores enviados correspondes a las propiedades existentes
+        if (
+          property !== "title" ||
+          property !== "description" ||
+          property !== "price" ||
+          property !== "code" ||
+          property !== "thumbnail" ||
+          property !== "stock"
+        ) {
+          console.log(
+            `updateProduct: error, ${property} is not a correct property`
+          );
+          return `updateProduct: error, ${property} is not a correct property`;
+        }
+        productFound[property] = product[property];
+      }
+      await this.write();
+      return "updateProduct: done";
+    } catch (err) {
+      console.warn(err);
+      return "updateProduct: error";
+    }
+  }
+
+  //Borra producto de array en memoria y luego guarda cambios en el archivo
+  async deleteProduct(id) {
+    //busco producto por index
+    try {
+      const index = this.#products.indexOf((product) => product.id == id);
+      if (index === -1) {
+        return "Not found";
+      }
+      this.#products.splice(this.#products[index], 1);
+      await this.write();
+      return "deleteProduct: done";
+    } catch (err) {
+      console.warn(err);
+      return "deleteProduct: error";
     }
   }
 }
