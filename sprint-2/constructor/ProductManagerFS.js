@@ -70,6 +70,7 @@ export class ProductManager {
         price,
         code,
         thumbnail,
+        stock,
       };
       this.#products.push(newProduct);
       console.log(
@@ -114,7 +115,7 @@ export class ProductManager {
   }
 
   //Actualiza un del array en memoria y luego lo guarda en el archivo
-  async updateProduct(id, product) {
+  async updateProduct(id, data) {
     try {
       //busco producto reutilizando metodo
       const productFound = this.getProductById(id); // tambien puedo utilizar un filter sobre this-#products
@@ -123,26 +124,26 @@ export class ProductManager {
         return "Not found";
       }
       //verifico si recibo valores para actualizar
-      if (Object.keys(product) === 0) {
+      if (Object.keys(data) === 0) {
         return "updateProduct: error, no values to update";
       }
       //sobreescribo los valores de las propiedades
-      for (let property in product) {
+      for (let prop in data) {
         //reviso si los valores enviados correspondes a las propiedades existentes
         if (
-          property !== "title" ||
-          property !== "description" ||
-          property !== "price" ||
-          property !== "code" ||
-          property !== "thumbnail" ||
-          property !== "stock"
+          prop !== "title" &&
+          prop !== "description" &&
+          prop !== "price" &&
+          prop !== "code" &&
+          prop !== "thumbnail" &&
+          prop !== "stock"
         ) {
           console.log(
-            `updateProduct: error, ${property} is not a correct property`
+            `updateProduct: error, ${prop} is not a correct property`
           );
-          return `updateProduct: error, ${property} is not a correct property`;
+          return `updateProduct: error, ${prop} is not a correct property`;
         }
-        productFound[property] = product[property];
+        productFound[prop] = data[prop];
       }
       await this.write();
       return "updateProduct: done";

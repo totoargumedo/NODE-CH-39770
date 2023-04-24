@@ -1,82 +1,92 @@
 [
   {
+    "id": 1,
     "title": "Pendrive Kingston 16GB",
     "description": "Pendrive 16GB Kingston Rojo con tapita",
     "price": 1890,
     "code": "KNG16GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "id": 1
+    "stock": 450
   },
   {
+    "id": 2,
     "title": "Pendrive Kingston 32GB",
     "description": "Pendrive 32GB Kingston Rojo con tapita",
     "price": 2550,
     "code": "KNG32GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "id": 2
+    "stock": 450
   },
   {
+    "id": 3,
     "title": "Pendrive Kingston 64GB",
     "description": "Pendrive 64GB Kingston Rojo con tapita",
     "price": 4100,
     "code": "KNG64GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "id": 3
+    "stock": 450
   },
   {
+    "id": 4,
     "title": "Pendrive Kingston 128GB",
     "description": "Pendrive 128GB Kingston Rojo con tapita",
     "price": 8900,
     "code": "KNG128GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "id": 4
+    "stock": 450
   },
   {
+    "id": 5,
     "title": "Pendrive Kingston 256GB",
     "description": "Pendrive 256GB Kingston Rojo con tapita",
     "price": 14200,
     "code": "KNG256B",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "id": 5
+    "stock": 450
   },
   {
+    "id": 6,
     "title": "Pendrive Kingston 512GB",
     "description": "Pendrive 512GB Kingston Rojo con tapita",
     "price": 21000,
     "code": "KNG512GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "id": 6
+    "stock": 450
   },
   {
+    "id": 7,
     "title": "Pendrive Kingston 64GB",
     "description": "Pendrive 64GB Kingston Azul con tapita",
     "price": 4100,
     "code": "KNG64GBA",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "id": 7
+    "stock": 450
   },
   {
+    "id": 8,
     "title": "Pendrive Kingston 128GB",
     "description": "Pendrive 128GB Kingston Azul con tapita",
     "price": 8900,
     "code": "KNG128GBA",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "id": 8
+    "stock": 450
   },
   {
+    "id": 9,
     "title": "Pendrive Kingston 64GB",
-    "description": "Pendrive 64GB Kingston verde con tapita",
-    "price": 4100,
-    "code": "KNG64VGB",
+    "description": "Pendrive 64GB Kingston violeta",
+    "price": 5200,
+    "code": "KNG64GBSTVI",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "id": 9
+    "stock": 450
   },
   {
+    "id": 10,
     "title": "Pendrive Kingston 128GB",
     "description": "Pendrive 128GB Kingston verde con tapita",
     "price": 8900,
     "code": "KNG128GBV",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "id": 10
+    "stock": 450
   }
 ]
