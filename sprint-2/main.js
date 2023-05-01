@@ -93,7 +93,7 @@ async function testing() {
     stock: 450,
   });
   await productos.deleteProduct(10);
-  await productos.getProducts();
+  // await console.log(productos.getProducts());
 }
 
 testing();

@@ -157,11 +157,11 @@ export class ProductManager {
   async deleteProduct(id) {
     //busco producto por index
     try {
-      const index = this.#products.indexOf((product) => product.id == id);
+      const index = this.#products.findIndex((product) => product.id === id);
       if (index === -1) {
         return "Not found";
       }
-      this.#products.splice(this.#products[index], 1);
+      this.#products = this.#products.filter((product) => product.id != id);
       await this.write();
       return "deleteProduct: done";
     } catch (err) {
