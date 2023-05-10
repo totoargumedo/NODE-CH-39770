@@ -86,11 +86,6 @@ export class ProductManager {
       if (this.#products.length === 0) {
         return "getProducts: empty";
       }
-      // pense como opcion limitar los productos devueltos desde el controlador.
-      // if (limit && limit > 0) {
-      //   const limitedProducts = this.#products.slice(0, limit);
-      //   return limitedProducts;
-      // }
       return this.#products;
     } catch (err) {
       return "getProducts: error";
@@ -141,7 +136,7 @@ export class ProductManager {
         productFound[prop] = data[prop];
       }
       await this.write();
-      return "updateProduct: done";
+      return productFound;
     } catch (err) {
       return "updateProduct: error";
     }
@@ -151,9 +146,10 @@ export class ProductManager {
   async deleteProduct(id) {
     //busco producto por index
     try {
-      const index = this.#products.findIndex((product) => product.id === id);
+      const index = this.#products.findIndex((product) => product.id == id);
+      console.log(index);
       if (index === -1) {
-        return "Not found";
+        return "deleteProduct: error, not found";
       }
       this.#products = this.#products.filter((product) => product.id != id);
       await this.write();
