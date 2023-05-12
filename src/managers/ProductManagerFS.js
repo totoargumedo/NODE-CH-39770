@@ -75,7 +75,8 @@ export class ProductManager {
       this.#products.push(newProduct);
       await this.write();
       return newProduct.id;
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       return "addProduct: error";
     }
   }
@@ -87,7 +88,8 @@ export class ProductManager {
         return "getProducts: empty";
       }
       return this.#products;
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       return "getProducts: error";
     }
   }
@@ -102,7 +104,8 @@ export class ProductManager {
       } else {
         return productById;
       }
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       return "getProductById: error";
     }
   }
@@ -137,7 +140,8 @@ export class ProductManager {
       }
       await this.write();
       return productFound;
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       return "updateProduct: error";
     }
   }
@@ -154,7 +158,8 @@ export class ProductManager {
       this.#products = this.#products.filter((product) => product.id != id);
       await this.write();
       return "deleteProduct: done";
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       return "deleteProduct: error";
     }
   }

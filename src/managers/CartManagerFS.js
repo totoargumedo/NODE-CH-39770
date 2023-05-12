@@ -58,8 +58,78 @@ export class CartManager {
       this.#carts.push(newCart);
       await this.write();
       return newCart.id;
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       return "addCart: error";
+    }
+  }
+
+  //agrega productos al carrito
+  async updateCart(cid, pid, units) {
+    try {
+      //revisamos que lleguen los datos necesarios
+      if (cid && pid && units) {
+        //buscamos el carrito
+        const cartFound = this.getCartById(cid);
+        //si no existe retornamos error
+        if (!cartFound) {
+          return null;
+        }
+        //revisamos si el producto ya existe en el carrito, si existe sumamos las unidades que vienen, si no existen creamos el producto en el array
+        const productExist = cartFound.products.find(
+          (product) => product.pid == pid
+        );
+        if (productExist) {
+          productExist.quantity += Number(units);
+        } else {
+          cartFound.products.push({
+            pid: Number(pid),
+            quantity: Number(units),
+          });
+        }
+        await this.write();
+        return cartFound;
+      } else {
+        return "updateCart: error, something missing";
+      }
+    } catch (error) {
+      console.error(error);
+      return "updateCart: error";
+    }
+  }
+
+  //quita productos del carrito
+  async deleteProductFromCart(cid, pid, units) {
+    try {
+      //revisamos que lleguen los datos necesarios
+      if (cid && pid && units) {
+        //buscamos el carrito
+        const cartFound = this.getCartById(cid);
+        //si no existe retornamos error
+        if (!cartFound) {
+          return null;
+        }
+        //revisamos si el producto existe en el carrito, si existe sumamos las unidades que vienen, si no existen creamos el producto en el array
+        const productExist = cartFound.products.findIndex(
+          (product) => product.pid == pid
+        );
+        if (productExist != -1) {
+          if (productExist.quantity <= units) {
+            cartFound.products.splice(cartFound.products[productExist], 1);
+          } else {
+            cartFound.products[productExist].quantity -= Number(units);
+          }
+        } else {
+          return "deleteProductFromCart: error, something missing";
+        }
+        await this.write();
+        return cartFound;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error(error);
+      return "deleteProductFromCart: error";
     }
   }
 
@@ -70,7 +140,8 @@ export class CartManager {
         return "getCarts: empty";
       }
       return this.#carts;
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       return "getCarts: error";
     }
   }
@@ -85,7 +156,8 @@ export class CartManager {
       } else {
         return cartById;
       }
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       return "getCartById: error";
     }
   }
