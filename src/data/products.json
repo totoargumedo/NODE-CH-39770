@@ -6,7 +6,7 @@
     "price": 1890,
     "code": "KNG16GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 450
+    "stock": 51
   },
   {
     "id": 2,
@@ -63,20 +63,20 @@
     "stock": 450
   },
   {
-    "id": 8,
-    "title": "Pendrive Kingston 128GB",
-    "description": "Pendrive 128GB Kingston Azul con tapita",
-    "price": 8900,
-    "code": "KNG128GBA",
-    "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 450
-  },
-  {
     "id": 9,
     "title": "Pendrive Kingston 64GB",
     "description": "Pendrive 64GB Kingston violeta",
     "price": 5200,
     "code": "KNG64GBSTVI",
+    "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
+    "stock": 450
+  },
+  {
+    "id": 10,
+    "title": "Pendrive Kingston 1TB",
+    "description": "Pendrive 1TB Kingston Rojo con tapita",
+    "price": 18090,
+    "code": "KNG1TB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
     "stock": 450
   }

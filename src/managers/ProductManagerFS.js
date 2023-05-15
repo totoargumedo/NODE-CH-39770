@@ -51,11 +51,11 @@ export class ProductManager {
   async addProduct({ title, description, price, code, thumbnail, stock }) {
     try {
       if (!title || !description || !price || !code || !thumbnail || !stock) {
-        return console.log("addProduct: error");
+        return "addProduct: error, something missing";
       }
       // revisamos si el campo code no este repetido entre los elementos que ya estan cargados.
       if (this.#products.some((item) => item.code == code)) {
-        return console.log(`addProduct: error, ${code} already exists`);
+        return `addProduct: error, ${code} already exists`;
       }
       //Campos por defecto
       thumbnail =
@@ -73,13 +73,10 @@ export class ProductManager {
         stock,
       };
       this.#products.push(newProduct);
-      console.log(
-        `Producto ${newProduct.title} con id:${newProduct.id} agregado correctamente`
-      );
       await this.write();
       return newProduct.id;
-    } catch (err) {
-      console.warn(err);
+    } catch (error) {
+      console.error(error);
       return "addProduct: error";
     }
   }
@@ -88,12 +85,11 @@ export class ProductManager {
   getProducts() {
     try {
       if (this.#products.length === 0) {
-        console.log("Not found");
-        return this.#products;
+        return "getProducts: empty";
       }
       return this.#products;
-    } catch (err) {
-      console.warn(err);
+    } catch (error) {
+      console.error(error);
       return "getProducts: error";
     }
   }
@@ -108,8 +104,8 @@ export class ProductManager {
       } else {
         return productById;
       }
-    } catch (err) {
-      console.warn(err);
+    } catch (error) {
+      console.error(error);
       return "getProductById: error";
     }
   }
@@ -138,17 +134,14 @@ export class ProductManager {
           prop !== "thumbnail" &&
           prop !== "stock"
         ) {
-          console.log(
-            `updateProduct: error, ${prop} is not a correct property`
-          );
           return `updateProduct: error, ${prop} is not a correct property`;
         }
         productFound[prop] = data[prop];
       }
       await this.write();
-      return "updateProduct: done";
-    } catch (err) {
-      console.warn(err);
+      return productFound;
+    } catch (error) {
+      console.error(error);
       return "updateProduct: error";
     }
   }
@@ -157,15 +150,16 @@ export class ProductManager {
   async deleteProduct(id) {
     //busco producto por index
     try {
-      const index = this.#products.findIndex((product) => product.id === id);
+      const index = this.#products.findIndex((product) => product.id == id);
+      console.log(index);
       if (index === -1) {
-        return "Not found";
+        return "deleteProduct: error, not found";
       }
       this.#products = this.#products.filter((product) => product.id != id);
       await this.write();
       return "deleteProduct: done";
-    } catch (err) {
-      console.warn(err);
+    } catch (error) {
+      console.error(error);
       return "deleteProduct: error";
     }
   }

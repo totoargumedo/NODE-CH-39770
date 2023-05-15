@@ -1,8 +1,6 @@
-import { ProductManager } from "./constructor/ProductManagerFS.js";
+import productos from "../controllers/products.js";
 
 async function testing() {
-  const productos = await new ProductManager("./data/data.json");
-
   await productos.addProduct({
     title: "Pendrive Kingston 16GB",
     description: "Pendrive 16GB Kingston Rojo con tapita",
@@ -83,17 +81,6 @@ async function testing() {
     thumbnail: "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
     stock: 450,
   });
-  await productos.getProductById(9);
-  await productos.updateProduct(9, {
-    title: "Pendrive Kingston 64GB",
-    description: "Pendrive 64GB Kingston violeta",
-    price: 5200,
-    code: "KNG64GBSTVI",
-    thumbnail: "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    stock: 450,
-  });
-  await productos.deleteProduct(10);
-  // await console.log(productos.getProducts());
 }
 
 testing();
