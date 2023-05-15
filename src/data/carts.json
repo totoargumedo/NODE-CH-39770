@@ -110,7 +110,7 @@
     "products": [
       {
         "pid": 1,
-        "quantity": 444
+        "quantity": 442
       },
       {
         "pid": 3,
@@ -125,5 +125,9 @@
         "quantity": 6
       }
     ]
+  },
+  {
+    "id": 9,
+    "products": []
   }
 ]
