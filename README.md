@@ -12,51 +12,7 @@ npm run start
 
 agregar a package.json -> "type": "module",
 
-Sprint 4 (Desafío 4)
-
-Se agrega una clase ProductManager en el archivo ProductManagerFS.js para guardar en archivos en la carpeta data.
-
-Para utilizarla con Modules
-
-import { ProductManager } from "./ProductManagerFS.js";
-
-Crear una instancia de la clase para poder utilizarla
-
-const productos = new ProductManager
-
-Al crear la instancia init() que es un metodo interno, lee el archivo y carga en memoria los datos, caso contrario crea un archivo nuevo.
-
-addProduct -> Guarda producto en memoria y luego en archivo, le agrega un id de forma automatica tomando como punto de partida el del ultimo elemento del archivo, devuelve el id del producto agregado.
-
-productos.addProduct({
-title: string,
-description: string,
-price: number,
-thumbnail: string,
-stock: number,
-});
-
-getProducts -> Devuelve productos guardados en memoria, si no hay productos devuelve el array vacio.
-
-productos.getProducts()
-
-getProductById -> Devuelve el producto guardado en memoria con el id que se envia por argumento
-
-productos.getProductById(id)
-
-updateProducts(id, data) -> Actualiza un producto guardado anteriormente, en caso de no enviar informacion para actualizar o enviar propiedades inadecuadas devuelve error.
-
-productos.updateProduct(3,{
-title: string,
-description: string,
-price: number,
-thumbnail: string,
-stock: number,
-});
-
-deleteProducts(id) -> Elimina un producto guardado anteriormente, en caso de no encontrar el elemento devuelve error.
-
-productos.deleteProduct(3);
+Sprint 5 (Desafío 5)
 
 Servidor en Express
 
@@ -106,10 +62,14 @@ GET -> /api/carts
 
 Devuelve todos los carritos cargados
 
-GET -> /api/carts/:cid
+GET -> /api/carts/:cid?totalItems=true
 GET -> /api/carts/1
 
 Devuelve el carrito con id 1
+
+GET -> /api/carts/1?totalItems=true
+
+Devuelve el total de items en el carrito con id 1
 
 POST -> /api/carts
 

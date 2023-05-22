@@ -148,11 +148,16 @@ export class CartManager {
 
   //devuelve un carrito por id, en caso de no encontrarlo devuelve error
 
-  getCartById(id) {
+  getCartById(id, totalItems) {
     try {
+      totalItems = totalItems ?? null;
       const cartById = this.#carts.find((cart) => cart.id == id);
       if (!cartById) {
         return null;
+      }
+      //si viene el campo totalItems como true devuelve la cantidad de items en la propiedad productos
+      if (totalItems) {
+        return cartById.products.length;
       } else {
         return cartById;
       }
@@ -161,25 +166,4 @@ export class CartManager {
       return "getCartById: error";
     }
   }
-
-  //Agrega un producto al array de productos de un carrito del array en memoria y luego lo guarda en el archivo
-  // async addProduct(id, pid) {
-  //   try {
-  //     if (!pid) {
-  //       return "addProduct: error, something missing";
-  //     }
-  //     // revisamos si el campo code no este repetido entre los elementos que ya estan cargados.
-  //     const cartFound = this.#carts.find((cart) => cart.id == id);
-  //     const idInCart = cartFound.products.some(product=>product.pid == pid)
-  //     if(idInCart){
-  //       const productFound
-  //     }else{
-  //       cartFound.products.push({ pid: pid, quantity: 1 });
-  //     }
-  //     await this.write();
-  //     return cartFound;
-  //   } catch (err) {
-  //     return "addProduct: error";
-  //   }
-  // }
 }

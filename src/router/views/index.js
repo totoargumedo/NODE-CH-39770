@@ -2,8 +2,9 @@ import { Router } from "express";
 
 const view_router = Router();
 
+//welcome
 view_router.get("/", (req, res) => {
-  res.json({ endpoint: req.path });
+  res.render("index");
 });
 
 export default view_router;
