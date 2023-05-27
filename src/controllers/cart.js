@@ -1,6 +1,6 @@
 import { CartManager } from "../constructor/CartManagerFS.js";
 
-const carritos = await new CartManager("./data/carts.json");
+const carritos = await new CartManager("./src/data/carts.json");
 
 // carritos.addCart();
 // carritos.addCart();

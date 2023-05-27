@@ -39,7 +39,7 @@ const getProducts_function = async (req, res) => {
     });
   }
 };
-app.get("/api/products", getProducts_function);
+app.get("/products", getProducts_function);
 
 // Obtener productos por id
 const getProductsById_function = async (req, res) => {
@@ -59,7 +59,7 @@ const getProductsById_function = async (req, res) => {
     });
   }
 };
-app.get("/api/products/:pid", getProductsById_function);
+app.get("/products/:pid", getProductsById_function);
 
 // Obtener carritos
 const getCarts_function = async (req, res) => {
@@ -73,7 +73,7 @@ const getCarts_function = async (req, res) => {
     });
   }
 };
-app.get("/api/carts", getCarts_function);
+app.get("/carts", getCarts_function);
 
 // Obtener carrito por id
 const getCartsById_function = async (req, res) => {
@@ -93,4 +93,4 @@ const getCartsById_function = async (req, res) => {
     });
   }
 };
-app.get("/api/carts/:cid", getCartsById_function);
+app.get("/carts/:cid", getCartsById_function);
