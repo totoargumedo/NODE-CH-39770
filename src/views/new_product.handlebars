@@ -1,0 +1,84 @@
+<div
+  class="container-fluid d-flex justify-content-center align-items-center my-5"
+>
+  <form action="api/products" method="POST">
+    <p class="h2 p-4">Carga de producto</p>
+
+    <div class="row g-2">
+      <div class="form-floating mb-3 col-md">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingName"
+          placeholder="Sable de luz"
+          name="title"
+          required
+        />
+        <label for="floatingName">Nombre</label>
+      </div>
+      <div class="form-floating mb-3 col-md">
+        <textarea
+          class="form-control"
+          placeholder="Deja la descripción del producto aquí"
+          id="floatingDescription"
+          name="description"
+          required
+        ></textarea>
+        <label for="floatingDescription">Descripción</label>
+      </div>
+    </div>
+
+    <div class="row g-2">
+      <div class="form-floating mb-3 col-md">
+        <input
+          type="number"
+          class="form-control"
+          id="floatingPrice"
+          placeholder="2000"
+          name="price"
+          required
+        />
+        <label for="floatingPrice">Precio $</label>
+      </div>
+      <div class="form-floating mb-3 col-md">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingCode"
+          placeholder="SB34SR"
+          name="code"
+          required
+        />
+        <label for="floatingCode">Codigo</label>
+      </div>
+    </div>
+
+    <div class="row g-2">
+      <div class="form-floating mb-3 col-md">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingThumbnail"
+          placeholder="www.image.com.ar"
+          name="thumbnail"
+          required
+        />
+        <label for="floatingThumbnail">Imagen</label>
+      </div>
+      <div class="form-floating mb-3 col-md">
+        <input
+          type="number"
+          class="form-control"
+          id="floatingStock"
+          placeholder="430"
+          name="stock"
+          required
+        />
+        <label for="floatingStock">Stock</label>
+      </div>
+    </div>
+
+    <input class="btn btn-primary center" type="submit" value="Submit" />
+
+  </form>
+</div>

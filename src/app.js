@@ -42,9 +42,9 @@ socketServer.on("connection", (socket) => {
   console.log("New socket client");
 
   socket.on("cart-addProduct", () => {
-    const productsInCart = carts.getCartById(1, true); //forzamos que el carrito que muestre sea el 1, el segundo argumento indica que solo queremos el total de productos
+    const productsInCart = carts.getCartById(9, true); //forzamos que el carrito que muestre sea el 1, el segundo argumento indica que solo queremos el total de productos
     socket.emit("cart-productsTotal", productsInCart);
   });
 
-  socketServer.emit("cart-productsTotal", carts.getCartById(1, true));
+  socketServer.emit("cart-productsTotal", carts.getCartById(9, true));
 });

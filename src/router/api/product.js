@@ -67,7 +67,7 @@ const addProduct = async (req, res, next) => {
         thumbnail,
         stock,
       });
-      return res.status(201).json({ success: true, response: newProduct });
+      return res.status(201).redirect("/products");
     } else {
       return res.status(400).json({
         success: false,

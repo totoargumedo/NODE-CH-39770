@@ -42,7 +42,7 @@
     "price": 14200,
     "code": "KNG256B",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 450
+    "stock": 425
   },
   {
     "id": 6,
@@ -60,7 +60,7 @@
     "price": 5200,
     "code": "KNG64GBSTVI",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 450
+    "stock": 439
   },
   {
     "id": 10,
@@ -70,5 +70,23 @@
     "code": "KNG1TB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
     "stock": 350
+  },
+  {
+    "id": 11,
+    "title": "Light Saber",
+    "description": "Sable de Luz Verde de Qui-Gon",
+    "price": "15680",
+    "code": "LSQGA",
+    "thumbnail": "https://i.pinimg.com/originals/0a/76/38/0a76387e887afc060aa8a79ae1a7268e.jpg",
+    "stock": 0
+  },
+  {
+    "id": 12,
+    "title": "Light Saber",
+    "description": "Sable de luz Azul de Qui-Gon",
+    "price": "19230",
+    "code": "LSQGV",
+    "thumbnail": "https://i.pinimg.com/originals/0a/76/38/0a76387e887afc060aa8a79ae1a7268e.jpg",
+    "stock": 34
   }
 ]
