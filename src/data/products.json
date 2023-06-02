@@ -15,7 +15,8 @@
     "price": 2550,
     "code": "KNG32GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 450
+    "stock": 438,
+    "quantity": 12
   },
   {
     "id": 3,
@@ -33,7 +34,8 @@
     "price": 8900,
     "code": "KNG128GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 450
+    "stock": 450,
+    "quantity": 0
   },
   {
     "id": 5,
@@ -42,7 +44,8 @@
     "price": 14200,
     "code": "KNG256B",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 425
+    "stock": 438,
+    "quantity": 12
   },
   {
     "id": 6,
@@ -51,7 +54,8 @@
     "price": 21000,
     "code": "KNG512GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 450
+    "stock": 448,
+    "quantity": 2
   },
   {
     "id": 9,
@@ -78,7 +82,8 @@
     "price": "15680",
     "code": "LSQGA",
     "thumbnail": "https://i.pinimg.com/originals/0a/76/38/0a76387e887afc060aa8a79ae1a7268e.jpg",
-    "stock": 0
+    "stock": 0,
+    "quantity": 5
   },
   {
     "id": 12,
@@ -87,6 +92,7 @@
     "price": "19230",
     "code": "LSQGV",
     "thumbnail": "https://i.pinimg.com/originals/0a/76/38/0a76387e887afc060aa8a79ae1a7268e.jpg",
-    "stock": 34
+    "stock": 35,
+    "quantity": 0
   }
 ]

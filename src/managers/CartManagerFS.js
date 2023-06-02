@@ -114,7 +114,9 @@ export class CartManager {
           (product) => product.pid == pid
         );
         if (productExist != -1) {
-          if (productExist.quantity <= units) {
+          console.log(productExist);
+          console.log(units, cartFound.products[productExist].quantity);
+          if (units >= productExist.quantity) {
             cartFound.products.splice(cartFound.products[productExist], 1);
           } else {
             cartFound.products[productExist].quantity -= Number(units);
@@ -122,6 +124,7 @@ export class CartManager {
         } else {
           return "deleteProductFromCart: error, something missing";
         }
+        console.log("ok");
         await this.write();
         return cartFound;
       } else {
