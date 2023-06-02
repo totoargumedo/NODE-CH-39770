@@ -8,11 +8,13 @@ cart_router.get("/", async (req, res, next) => {
   try {
     const oneCart = await carts.getCartById(9); //encuentro el carrito
     // let manyProducts = await products.getProducts();//me traigo los productos guardados
-    let pids = oneCart.products.map((product) => product.pid); //extraigo los ids de los productos en el carrito
     let extendedCart = await oneCart.products.map((product) => {
-      //quiero agregarle el nombre y la imagen al los productos que muestro por carrito para visualizar mas info
-      let one = products.getProductById(product.pid);
+      //quiero que la vista de carrito pueda mostrar mas datos como el nombre y la imagen
+      let one = { ...products.getProductById(product.pid) };
+      //agrego la cantidad a este nuevo array de productos
       one.quantity = product.quantity;
+      //limito la cantidad de productos que pueden agregar en la vista
+      one.max = one.quantity + one.stock;
       return one;
     });
     res.render("cart", { products: extendedCart });

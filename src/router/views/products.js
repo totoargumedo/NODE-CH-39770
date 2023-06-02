@@ -7,7 +7,7 @@ product_router.get("/new_product", (req, res) => {
   res.render("new_product");
 });
 
-product_router.get("/", async (req, res, next) => {
+product_router.get("/products", async (req, res, next) => {
   try {
     const many = await products.getProducts();
     res.render("products", { products: many });
@@ -16,7 +16,7 @@ product_router.get("/", async (req, res, next) => {
   }
 });
 
-product_router.get("/:id", async (req, res, next) => {
+product_router.get("/products/:id", async (req, res, next) => {
   try {
     const id = req.params.id;
     const one = await products.getProductById(id);

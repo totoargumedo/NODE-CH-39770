@@ -9,7 +9,7 @@ view_router.get("/", (req, res) => {
   res.render("index");
 });
 
-view_router.use("/products", product_router);
+view_router.use("/", product_router);
 view_router.use("/carts", cart_router);
 
 export default view_router;

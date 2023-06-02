@@ -15,8 +15,7 @@
     "price": 2550,
     "code": "KNG32GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 438,
-    "quantity": 12
+    "stock": 450
   },
   {
     "id": 3,
@@ -25,7 +24,7 @@
     "price": 4100,
     "code": "KNG64GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 450
+    "stock": 442
   },
   {
     "id": 4,
@@ -34,8 +33,7 @@
     "price": 8900,
     "code": "KNG128GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 450,
-    "quantity": 0
+    "stock": 452
   },
   {
     "id": 5,
@@ -44,8 +42,7 @@
     "price": 14200,
     "code": "KNG256B",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 438,
-    "quantity": 12
+    "stock": 438
   },
   {
     "id": 6,
@@ -54,8 +51,7 @@
     "price": 21000,
     "code": "KNG512GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 448,
-    "quantity": 2
+    "stock": 443
   },
   {
     "id": 9,
@@ -82,8 +78,7 @@
     "price": "15680",
     "code": "LSQGA",
     "thumbnail": "https://i.pinimg.com/originals/0a/76/38/0a76387e887afc060aa8a79ae1a7268e.jpg",
-    "stock": 0,
-    "quantity": 5
+    "stock": 5
   },
   {
     "id": 12,
@@ -92,7 +87,15 @@
     "price": "19230",
     "code": "LSQGV",
     "thumbnail": "https://i.pinimg.com/originals/0a/76/38/0a76387e887afc060aa8a79ae1a7268e.jpg",
-    "stock": 35,
-    "quantity": 0
+    "stock": 33
+  },
+  {
+    "id": 13,
+    "title": "Sable de luz Dooku",
+    "description": "Sable de luz rojo del Conde Dooku",
+    "price": "28630",
+    "code": "SLQCD",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhTAdnDnunAeDlaMNPLtBpNXIS1WEvPqlyNVhMoQwiEjw2_MpuyyZ3xCdgkqQG2Bg4Wq4&usqp=CAU",
+    "stock": "8"
   }
 ]
