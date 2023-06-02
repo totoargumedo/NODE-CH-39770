@@ -9,7 +9,7 @@ import carts from "./controllers/cart.js";
 
 const app = express();
 
-const PORT = 8080;
+const PORT = process.env || 8080;
 
 //options
 app.use(express.urlencoded({ extended: true }));
