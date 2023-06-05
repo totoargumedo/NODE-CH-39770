@@ -1,4 +1,4 @@
-const socket = io();
+export const socket = io();
 
 const cartLogo = document.getElementById("cart_logo");
 

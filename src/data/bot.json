@@ -1,0 +1,86 @@
+[
+  {
+    "id": 0,
+    "message": "Bienvenido a la tienda Rebelde, mi nombre es Obi y estare encantado de asistirle. De las siguientes opciones, indique con numero en cual puedo asistirle",
+    "options":[
+      {"id": 1, "message": "Ayuda con productos."},
+      {"id": 2, "message": "Ayuda con carrito."},
+      {"id": 3, "message": "Contactar con atención al cliente."},
+      {"id": 4, "message": "Otras opciones."}
+    ]
+  },
+  {
+    "id": 1,
+    "message": "Opciones de productos",
+    "options":[
+      {"id": 11, "message": "Encontrar un producto."},
+      {"id": 12, "message": "Cargar un producto nuevo."},
+      {"id": 13, "message": "Ver todos los productos disponibles."},
+      {"id": 9, "message": "Mostrame las opciones iniciales"} 
+    ]
+  },
+  {
+    "id": 2,
+    "message": "Opciones de carrito",
+    "options":[
+      {"id": 21, "message": "Ir a mi carrito."},
+      {"id": 22, "message": "Como cambiar la cantidad de productos en el carrito."},
+      {"id": 23, "message": "Como quitar un producto de mi carrito."},
+      {"id": 9, "message": "Otras opciones."}
+    ]
+  },
+  {
+    "id": 3,
+    "message": "Puedes contactar con atencion al cliente por los siguientes medios",
+    "options":[
+      {"id": 1,"message": "Telefono 0800-Ayuda"},
+      {"id": 2,"message": "Email emailfalso@rebelshop.com"},
+      {"id": 3,"message": "Whatsapp: +54 2600 4542245"}
+    ]
+  },
+  {
+    "id": 4,
+    "message": "Lamentablemente solo soy un asistente con respuestas preconfiguradas y limitadas. Tal vez en algunas versiones mas pueda serte de mas utilidad. Igualmente te dejo algunas sugerencias a continuación:",
+    "options":[
+      {"id": ":D", "message": "Una sugerencia."},
+      {"id": "=O", "message": "Otra sugerencia"},
+      {"id": "xD", "message": "Tercera y ultima sugerencia."}
+    ]
+  },
+  {
+    "id": 9,
+    "options":[
+      {"id": 1, "message": "Ayuda con productos."},
+      {"id": 2, "message": "Ayuda con carrito."},
+      {"id": 3, "message": "Contactar con atención al cliente."},
+      {"id": 4, "message": "Otras opciones."}
+    ]
+  },
+   {
+    "id": 11,
+    "message": "Ingrese /buscar seguido de un espacio y lo que desee encontrar en la tienda"
+  },
+  {
+    "id": 12,
+    "message": "El siguiente link lo llevara al formulario de carga",
+    "redirect": "/new_product"   
+  },
+  {
+    "id": 13,
+    "message": "El siguiente link lo llevara a la galería de productos",
+    "redirect": "/products"   
+  },
+  {
+    "id": 21,
+    "message": "El siguiente link te llevara a tu carrito",
+    "redirect": "/carts"
+  },
+  {
+    "id": 22,
+    "message": "Una de tus opciones es agregar productos al carrito directamente desde la pagina del producto elegido. La otra opción que tienes es ir al carrito y desde ahi indicar la cantidad total que deseas de ese producto"
+  },
+  {
+    "id": 23,
+    "message": "Para quitar un producto de tu carrito puedes cambiar la cantidad total a 0 o presionar el boton rojo con el simbolo de basurero"
+  }
+]

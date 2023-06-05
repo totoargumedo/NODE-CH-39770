@@ -5,11 +5,11 @@ import errorHandler from "./middlewares/errorHandler.js";
 import not_found_handler from "./middlewares/notFoundHandler.js";
 import __dirname from "./utils.js";
 import { Server } from "socket.io";
-import carts from "./controllers/cart.js";
+import socket_index from "./socket/index.js";
 
 const app = express();
 
-const PORT = process.env || 8080;
+const PORT = 8080;
 
 //options
 app.use(express.urlencoded({ extended: true }));
@@ -25,7 +25,7 @@ const httpServer = app.listen(PORT, () => {
   console.log(`Server running on port: ${PORT}`);
 });
 
-const socketServer = new Server(httpServer);
+export const socketServer = new Server(httpServer);
 
 //static routes
 app.use("/public", express.static("public"));
@@ -38,13 +38,4 @@ app.use(errorHandler);
 app.use(not_found_handler);
 
 //socket
-socketServer.on("connection", (socket) => {
-  console.log("New socket client");
-
-  socket.on("cart-addProduct", () => {
-    const productsInCart = carts.getCartById(9, true); //forzamos que el carrito que muestre sea el 1, el segundo argumento indica que solo queremos el total de productos
-    socket.emit("cart-productsTotal", productsInCart);
-  });
-
-  socketServer.emit("cart-productsTotal", carts.getCartById(9, true));
-});
+socketServer.on("connection", socket_index);
