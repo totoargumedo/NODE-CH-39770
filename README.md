@@ -4,7 +4,7 @@ Repositorio de trabajo en clase de curso NodeJs Coderhouse
 
 Se utiliza ECMAScript Modules.
 
-1- Inicializar el servidor
+1- Inicializar el servidor en express
 
 npm run start
 
@@ -14,13 +14,27 @@ agregar a package.json -> "type": "module",
 
 Sprint 5 (Desafío 5)
 
-Servidor en Express
+3- Pantallas
 
-1- Iniciar servidor
+PRINCIPAL -> /
+Pantalla de inicio con navegador a las siguientes pantallas
 
-npm run start
+PRODUCTOS -> /new_product
+Formulario de carga de productos - Realiza POST a /api/products
 
-2- Endpoints Productos
+PRODUCTOS -> /products
+Galeria de tarjeta de todos los productos que devuelve GET /api/products
+
+PRODUCTOS -> /products/:id -> /products/1
+Pantalla de producto, devuelve el producto con id 1
+
+CARRITO -> /carts
+Pantalla de productos en carrito con id "9", tiene opcion de eliminacion o cambio de cantidad con limite en el stock disponible
+
+PREGUNTANOS / ICONO DE CHAT -> /chat
+Pantalla de chat con chatbot, presenta opciones y reconoce las opciones indicadas por numero. Tambien devuelve busquedas de producto cuando el chat incluye "/buscar alguna busqueda"
+
+4- Endpoints Productos
 
 GET -> /api/products
 
@@ -56,7 +70,7 @@ DELETE -> /api/products/1
 
 Elimina el producto con id 1
 
-2- Endpoints Carritos
+5- Endpoints Carritos
 
 GET -> /api/carts
 
