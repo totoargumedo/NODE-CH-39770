@@ -143,15 +143,11 @@
       },
       {
         "pid": 3,
-        "quantity": 8
+        "quantity": 1
       },
       {
         "pid": 12,
         "quantity": 6
-      },
-      {
-        "pid": 11,
-        "quantity": 5
       }
     ]
   }

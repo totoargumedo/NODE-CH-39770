@@ -1,7 +1,7 @@
 import carts from "../controllers/cart.js";
 import bot from "../controllers/bot.js";
 import products from "../controllers/products.js";
-import { socketServer } from "../app.js";
+import socketServer from "../server.js";
 
 function socket_index(socket) {
   console.log("New socket client");
