@@ -9,7 +9,11 @@
       <div class="col">
 
         <div class="card h-100" style="width: 18rem;">
+          {{#if product._id}}
+          <a href="/products/{{product._id}}"></a>
+          {{^}}
           <a href="/products/{{product.id}}">
+          {{/if}}
             <img
               src="{{product.thumbnail}}"
               class="object-fit-cover card-img-top"
@@ -31,7 +35,11 @@
                     name="units"
                       min="0" max="{{product.stock}}"
                              required />
-                              <input type="hidden" name="product" value="{{product.id}}">
+                              {{#if product._id}}
+                                <input type="hidden" name="product" value="{{product._id}}">
+                              {{^}}
+                                <input type="hidden" name="product" value="{{product.id}}">
+                              {{/if}}
               </div>
               {{#if units}}
               <input
@@ -53,4 +61,8 @@
       </div>
   </div>
 </div>
-<script src="/public/js/product.js"></script>
+{{#if product._id}}
+          <script src="/public/js/productDB.js"></script>
+          {{^}}
+          <script src="/public/js/productFS.js"></script>
+          {{/if}}

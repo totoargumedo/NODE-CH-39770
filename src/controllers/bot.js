@@ -1,4 +1,4 @@
-import { ChatBot } from "../managers/ChatBotManagerFS.js";
+import { ChatBot } from "../dao/ChatBotManagerFS.js";
 
 const bot = new ChatBot("./src/data/bot.json");
 

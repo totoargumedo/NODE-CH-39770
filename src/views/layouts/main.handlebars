@@ -56,15 +56,39 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Productos
+                ProductosFS
               </a>
               <ul class="dropdown-menu">
                 <li><a
                     class="dropdown-item"
                     href="/new_product"
                   >Agregar</a></li>
-                <li><a class="dropdown-item" href="/products">Ver todos</a></li><li
-                ><a class="dropdown-item" href="/carts">Carrito</a></li>
+                <li><a class="dropdown-item" href="/productsFS">Ver todos</a></li><li
+                ><a class="dropdown-item" href="/cartsFS">Carrito</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a
+                    class="dropdown-item"
+                    href="https://github.com/totoargumedo/NODE-CH-39770/"
+                  >API Info</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                ProductosDB
+              </a>
+              <ul class="dropdown-menu">
+                <li><a
+                    class="dropdown-item"
+                    href="/new_product"
+                  >Agregar</a></li>
+                <li><a class="dropdown-item" href="/productsDB">Ver todos</a></li><li
+                ><a class="dropdown-item" href="/cartsDB">Carrito</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li><a
                     class="dropdown-item"
@@ -73,19 +97,31 @@
               </ul>
             </li>
           </ul>
-
           <i class="fa-solid fa-cart-shopping position-relative mx-4">
-            <a href="/carts">
+            <a href="/cartsDB">
               <span
                 class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
-                id="cart_logo"
+                id="cart_logoDB"
               >
                 <span class="visually-hidden">unread messages
                 </span>
               </span>
             </a>
           </i>
+          <i class="fa-solid fa-cart-shopping position-relative mx-4">
+            <a href="/cartsFS">
+              <span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
+                id="cart_logoFS"
+              >
+                <span class="visually-hidden">unread messages
+                </span>
+              </span>
+            </a>
+          </i>
+
         </div>
+
       </div>
     </nav>
     {{{body}}}

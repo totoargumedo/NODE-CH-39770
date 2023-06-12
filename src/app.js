@@ -1,9 +1,11 @@
 import express from "express";
+import "dotenv/config.js";
 import router from "./router/index.js";
 import handlebars from "express-handlebars";
 import errorHandler from "./middlewares/errorHandler.js";
 import not_found_handler from "./middlewares/notFoundHandler.js";
 import __dirname from "./utils.js";
+import "dotenv/config.js";
 
 export const app = express();
 

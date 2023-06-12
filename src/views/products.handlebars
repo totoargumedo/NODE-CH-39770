@@ -10,7 +10,11 @@
       <div class="col">
 
         <div class="card h-100" style="width: 18rem;">
-          <a href="/products/{{this.id}}">
+          {{#if this._id}}
+            <a href="/productsDB/{{this._id}}"></a>
+          {{^}}
+            <a href="/productsFS/{{this.id}}">
+          {{/if}}
             <img
               src="{{this.thumbnail}}"
               class="object-fit-cover card-img-top"
@@ -24,11 +28,20 @@
             <p class="card-text">{{this.description}}</p>
             <div class="row row-cols-1">
               <p class="btn btn-outline-success col">$ {{this.price}}</p>
-              <a
-                href="/products/{{this.id}}"
+              {{#if this._id}}
+                <a
+                href="/productsDB/{{this._id}}"
                 class="btn btn-primary col"
               >Comprar</a>
             </div>
+          {{^}}
+            <a
+                href="/productsFS/{{this.id}}"
+                class="btn btn-primary col"
+              >Comprar</a>
+            </div>
+          {{/if}}
+              
           </div>
         </div>
       </div>

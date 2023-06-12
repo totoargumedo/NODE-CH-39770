@@ -1,4 +1,4 @@
-import { ProductManager } from "../managers/ProductManagerFS.js";
+import { ProductManager } from "../dao/ProductManagerFS.js";
 // import { ProductManager } from "./constructor/ProductManagerMemory.js";
 
 const products = await new ProductManager("./src/data/products.json");
