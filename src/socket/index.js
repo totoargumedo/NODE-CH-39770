@@ -1,24 +1,16 @@
-import carts from "../controllers/cart.js";
 import Cart from "../models/Cart.js";
 import bot from "../controllers/bot.js";
-import products from "../controllers/products.js";
 import socketServer from "../server.js";
 
 //funcion asincrona para traer items en carrito
 async function getCartTotalProducts() {
   const one = await Cart.findById("64874ecf7ac94944740664a1");
-  await socketServer.emit("cart-productsTotalDB", one.products.length);
+  await socketServer.emit("cart-productsTotal", one.products.length);
 }
 
 function socket_index(socket) {
   console.log("New socket client");
 
-  socket.on("cart-addProduct", () => {
-    const productsInCart = carts.getCartById(9, true); //forzamos que el carrito que muestre sea el 1, el segundo argumento indica que solo queremos el total de productos
-    socket.emit("cart-productsTotal", productsInCart);
-  });
-
-  socketServer.emit("cart-productsTotalFS", carts.getCartById(9, true));
   getCartTotalProducts();
 
   socket.on("bot-new-connection", () => {

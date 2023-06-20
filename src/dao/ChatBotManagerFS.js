@@ -1,5 +1,4 @@
 import fs from "fs";
-import products from "../controllers/products.js";
 
 export class ChatBot {
   #messages;

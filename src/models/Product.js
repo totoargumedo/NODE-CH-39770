@@ -1,4 +1,5 @@
 import { model, Schema } from "mongoose";
+import mongoosePaginate from "mongoose-paginate-v2"; // plugin para paginar
 
 const collection = "products";
 
@@ -11,6 +12,7 @@ const schema = new Schema({
   stock: { type: Number, index: true, default: 0 },
 });
 
+schema.plugin(mongoosePaginate); //middleware de paginacion
 const Product = model(collection, schema);
 
 export default Product;

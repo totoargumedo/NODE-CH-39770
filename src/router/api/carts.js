@@ -53,11 +53,11 @@ cart_router.post("/", addCart_function);
 const updateCart_function = async (req, res, next) => {
   try {
     //en caso de que falte algun parametro le asigno null
-    let { cid, pid, units } = req.params ?? null;
+    let units = req.params.units ?? null;
     //revisamos si existen, si lo hacen se agregan al carrito
-    if (cid && pid && units) {
-      //buscamos el producto para ver el stock que queda y agregar al carrito los que quedan o los que se pide segun corresponda
-      const productFound = await Product.findById(pid);
+    if (req.params.cid && req.params.pid && units) {
+      //buscamos el producto para ver el stock que queda y agregar al carrito los que quedan o los que se req.params.pide segun corresponda
+      const productFound = await Product.findById(req.params.pid);
       if (units > productFound.stock) {
         return res.status(200).json({
           success: false,
@@ -65,12 +65,12 @@ const updateCart_function = async (req, res, next) => {
         });
       }
       const productExists = await Cart.findOne({
-        _id: cid,
-        products: { $elemMatch: { product_id: pid } },
+        _id: req.params.cid,
+        products: { $elemMatch: { product_id: req.params.pid } },
       });
       if (!productExists) {
         const one = await Cart.findOneAndUpdate(
-          { _id: cid },
+          { _id: req.params.cid },
           {
             $addToSet: {
               products: { product_id: productFound._id, quantity: units },
@@ -80,7 +80,7 @@ const updateCart_function = async (req, res, next) => {
         );
         //si el carrito no existe se responde que no se encontro, sino se envian los datos
         if (one) {
-          await Product.findByIdAndUpdate(pid, {
+          await Product.findByIdAndUpdate(req.params.pid, {
             stock: productFound.stock - Number(units),
           });
           return res.status(200).json({ success: true, response: one });
@@ -92,12 +92,12 @@ const updateCart_function = async (req, res, next) => {
         }
       } else {
         const one = await Cart.findOneAndUpdate(
-          { _id: cid, "products.product_id": pid },
+          { _id: req.params.cid, "products.product_id": req.params.pid },
           { $set: { "products.$.quantity": units } },
           { new: true }
         );
         if (one) {
-          await Product.findByIdAndUpdate(pid, {
+          await Product.findByIdAndUpdate(req.params.pid, {
             stock: productFound.stock - Number(units),
           });
           return res.status(200).json({ success: true, response: one });
@@ -124,26 +124,24 @@ cart_router.put("/:cid/product/:pid/:units", updateCart_function);
 const deleteProductFromCart_function = async (req, res, next) => {
   try {
     //en caso de que falte algun parametro le asigno null
-    let { cid, pid, units } = req.params ?? null;
+    let units = req.params.units ?? null;
     //buscamos el producto para devolverle el stock
-    const productFound = await Product.findById(pid).lean();
+    const productFound = await Product.findById(req.params.pid).lean();
     //revisamos si existen, si lo hacen se agregan al carrito
-    if (cid && pid && units) {
+    if (req.params.cid && req.params.pid && units) {
       const cartUpdated = await Cart.findOneAndUpdate(
         {
-          _id: cid,
-          products: { $elemMatch: { product_id: pid } },
+          _id: req.params.cid,
+          products: { $elemMatch: { product_id: req.params.pid } },
         },
         { $unset: { products: "" } }
       );
       //si el carrito no existe se responde que no se encontro, sino se envian los datos
       if (cartUpdated) {
-        await Product.findByIdAndUpdate(pid, {
+        await Product.findByIdAndUpdate(req.params.pid, {
           stock: productFound.stock + Number(units),
         });
-        return res
-          .status(200)
-          .json({ success: true, response: cartUpdated._id });
+        return res.status(200).json({ success: true, response: cartUpdated });
       } else {
         return res.status(400).json({
           success: false,

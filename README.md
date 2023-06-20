@@ -41,55 +41,33 @@ Pantalla de productos en carrito en DB con id "64874ecf7ac94944740664a1", tiene 
 PREGUNTANOS / ICONO DE CHAT -> /chat
 Pantalla de chat con chatbot, presenta opciones y reconoce las opciones indicadas por numero. Tambien devuelve busquedas de producto cuando el chat incluye "/buscar alguna busqueda"
 
-4- Endpoints Productos ----- Se crearon 2 rutas en paralelo
---> Para productos
-/api/productsFS y /api/productsDB
---> Para carritos
-/api/cartsFS y /api/cartsDB
+4- Endpoints Productos
 
-GET -> /api/productsFS
-Devuelve todos los productos cargados en FS
-GET -> /api/productsDB
+GET -> /api/products
 Devuelve todos los productos cargados en DB
 
-GET -> /api/productsFS?limit=1
-Devuelve los primeros n productos en FS, donde n es el numero asignado a limit
-GET -> /api/productsDB?limit=1
-Devuelve los primeros n productos en DB, donde n es el numero asignado a limit
+GET -> /api/products?page=1&limit=10
+Puede recibir las siguientes queries para paginar, page para indicar en que pagina esta (default es 1) y debe mostrar, y tambien limit para mostrar un numero limitado de resultados (default 6).
 
-GET -> /api/productsFS/:pid
-GET -> /api/productsFS/1
+GET -> /api/products?page=1&limit=10&title=Luke
+Tambien puede recibir query de busqueda utilizando title, no filtra por mayus y minus y devuelve los resultados que incluyan lo buscado en el campo title
+
+GET -> /api/products/:pid
+GET -> /api/products/1
 Devuelve el producto con id 1
 
-GET -> /api/productsDB/:pid
-GET -> /api/productsDB/1
-Devuelve el producto con id 1
+POST -> /api/products
+Crea un producto nuevo, devuelve el id del producto, recibe objetos en JSON con el siguiente formato
+{title: String, description: String, price: Number, code: String-unique, thumbnail: String, stock: Number}
 
-POST -> /api/productsFS
-POST -> /api/productsDB
+PUT -> /api/products/:pid
+PUT -> /api/products/64874ecf7ac94944740664a1
 
-Crea un producto nuevo, devuelve el id del producto
+Modifica un producto existe con id 1 o 64874ecf7ac94944740664a1, recibe un objeto con las siguientes propiedades {title: String, description: String, price: Number, code: String-unique, thumbnail: String, stock: Number}
 
-PUT -> /api/productsFS/:pid
-PUT -> /api/productsFS/1
-PUT -> /api/productsDB/:pid
-PUT -> /api/productsDB/64874ecf7ac94944740664a1
-
-Modifica un producto existe con id 1 o 64874ecf7ac94944740664a1, recibe un objeto con las siguientes propiedades {
-title,
-description,
-price,
-code,
-thumbnail,
-stock,
-}
-
-DELETE -> /api/productsFS/:pid
-DELETE -> /api/productsFS/1
-DELETE -> /api/productsDB/:pid
-DELETE -> /api/productsDB/64874ecf7ac94944740664a1
-
-Elimina el producto con id 1 o 64874ecf7ac94944740664a1
+DELETE -> /api/products/:pid
+DELETE -> /api/products/64874ecf7ac94944740664a1
+Elimina el producto con id 64874ecf7ac94944740664a1
 
 5- Endpoints Carritos
 
