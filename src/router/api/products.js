@@ -1,5 +1,6 @@
 import { Router } from "express";
 import Product from "../../models/Product.js";
+import productValidator from "../../middlewares/productValidator.js";
 
 const product_router = Router();
 
@@ -41,7 +42,7 @@ product_router.get("/", getProducts_function);
 // Obtener productos por id
 const getProductsById_function = async (req, res, next) => {
   try {
-    const productFound = await Product.find({ _id: req.params.pid });
+    const productFound = await Product.findById(req.params.pid);
     if (!productFound) {
       return res.status(400).json({
         success: false,
@@ -65,7 +66,7 @@ const addProduct = async (req, res, next) => {
   }
 };
 
-product_router.post("/", addProduct);
+product_router.post("/", productValidator, addProduct);
 
 //Actualizar producto
 const updateProduct = async (req, res, next) => {

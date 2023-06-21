@@ -35,25 +35,17 @@
                     name="units"
                       min="0" max="{{product.stock}}"
                              required />
-                              {{#if product._id}}
-                                <input type="hidden" name="product" value="{{product._id}}">
-                              {{^}}
-                                <input type="hidden" name="product" value="{{product.id}}">
-                              {{/if}}
-              </div>
-              {{#if units}}
+                            
               <input
                 type="submit"
                  value="Agregar"
                 class="btn btn-primary col-8"
               ></input>
-              {{^}}
               <input
                 type="submit"
                  value="Sin stock"
                 class="btn btn-outline-danger col-8"
               ></input>
-              {{/if}}
 
             </form>
           </div>
