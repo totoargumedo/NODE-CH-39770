@@ -110,6 +110,31 @@ export class ProductManager {
     }
   }
 
+  getProductByName(search) {
+    try {
+      let search_keys = search.toLowerCase().replace("/buscar", "").split(" ");
+      search_keys.splice(0, 1);
+      const productsFound = this.#products.filter((product) => {
+        for (let word of search_keys) {
+          if (
+            product.title.toLowerCase().includes(word) ||
+            product.description.toLowerCase().includes(word)
+          ) {
+            return product;
+          }
+        }
+      });
+      if (!productsFound) {
+        return null;
+      } else {
+        return productsFound;
+      }
+    } catch (error) {
+      console.error(error);
+      return "getProductByName: error";
+    }
+  }
+
   //Actualiza un del array en memoria y luego lo guarda en el archivo
   async updateProduct(id, data) {
     try {

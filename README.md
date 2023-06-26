@@ -4,7 +4,7 @@ Repositorio de trabajo en clase de curso NodeJs Coderhouse
 
 Se utiliza ECMAScript Modules.
 
-1- Inicializar el servidor
+1- Inicializar el servidor en express
 
 npm run start
 
@@ -12,59 +12,29 @@ npm run start
 
 agregar a package.json -> "type": "module",
 
-Sprint 4 (Desafío 4)
+Sprint 5 (Desafío 5)
 
-Se agrega una clase ProductManager en el archivo ProductManagerFS.js para guardar en archivos en la carpeta data.
+3- Pantallas
 
-Para utilizarla con Modules
+PRINCIPAL -> /
+Pantalla de inicio con navegador a las siguientes pantallas
 
-import { ProductManager } from "./ProductManagerFS.js";
+PRODUCTOS -> /new_product
+Formulario de carga de productos - Realiza POST a /api/products
 
-Crear una instancia de la clase para poder utilizarla
+PRODUCTOS -> /products
+Galeria de tarjeta de todos los productos que devuelve GET /api/products
 
-const productos = new ProductManager
+PRODUCTOS -> /products/:id -> /products/1
+Pantalla de producto, devuelve el producto con id 1
 
-Al crear la instancia init() que es un metodo interno, lee el archivo y carga en memoria los datos, caso contrario crea un archivo nuevo.
+CARRITO -> /carts
+Pantalla de productos en carrito con id "9", tiene opcion de eliminacion o cambio de cantidad con limite en el stock disponible
 
-addProduct -> Guarda producto en memoria y luego en archivo, le agrega un id de forma automatica tomando como punto de partida el del ultimo elemento del archivo, devuelve el id del producto agregado.
+PREGUNTANOS / ICONO DE CHAT -> /chat
+Pantalla de chat con chatbot, presenta opciones y reconoce las opciones indicadas por numero. Tambien devuelve busquedas de producto cuando el chat incluye "/buscar alguna busqueda"
 
-productos.addProduct({
-title: string,
-description: string,
-price: number,
-thumbnail: string,
-stock: number,
-});
-
-getProducts -> Devuelve productos guardados en memoria, si no hay productos devuelve el array vacio.
-
-productos.getProducts()
-
-getProductById -> Devuelve el producto guardado en memoria con el id que se envia por argumento
-
-productos.getProductById(id)
-
-updateProducts(id, data) -> Actualiza un producto guardado anteriormente, en caso de no enviar informacion para actualizar o enviar propiedades inadecuadas devuelve error.
-
-productos.updateProduct(3,{
-title: string,
-description: string,
-price: number,
-thumbnail: string,
-stock: number,
-});
-
-deleteProducts(id) -> Elimina un producto guardado anteriormente, en caso de no encontrar el elemento devuelve error.
-
-productos.deleteProduct(3);
-
-Servidor en Express
-
-1- Iniciar servidor
-
-npm run start
-
-2- Endpoints Productos
+4- Endpoints Productos
 
 GET -> /api/products
 
@@ -100,16 +70,20 @@ DELETE -> /api/products/1
 
 Elimina el producto con id 1
 
-2- Endpoints Carritos
+5- Endpoints Carritos
 
 GET -> /api/carts
 
 Devuelve todos los carritos cargados
 
-GET -> /api/carts/:cid
+GET -> /api/carts/:cid?totalItems=true
 GET -> /api/carts/1
 
 Devuelve el carrito con id 1
+
+GET -> /api/carts/1?totalItems=true
+
+Devuelve el total de items en el carrito con id 1
 
 POST -> /api/carts
 
