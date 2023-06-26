@@ -24,7 +24,7 @@
     "price": 4100,
     "code": "KNG64GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 449
+    "stock": 450
   },
   {
     "id": 4,
@@ -51,7 +51,7 @@
     "price": 21000,
     "code": "KNG512GB",
     "thumbnail": "https://i.insider.com/602ee9ced3ad27001837f2ac?width=700",
-    "stock": 443
+    "stock": 449
   },
   {
     "id": 9,
@@ -97,5 +97,14 @@
     "code": "SLQCD",
     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhTAdnDnunAeDlaMNPLtBpNXIS1WEvPqlyNVhMoQwiEjw2_MpuyyZ3xCdgkqQG2Bg4Wq4&usqp=CAU",
     "stock": "8"
+  },
+  {
+    "id": 14,
+    "title": "Sable de luz Maul",
+    "description": "Sable de Luz Doble Darth Maul",
+    "price": "32123",
+    "code": "SLQDM",
+    "thumbnail": "https://files.cults3d.com/uploaders/22692884/illustration-file/7e576696-36ef-4260-8dda-568c3ab7acd1/Darth-Mauls-Double-Bladed-Lightsaber-Variant.png",
+    "stock": 21
   }
 ]

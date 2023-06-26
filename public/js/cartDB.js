@@ -10,7 +10,7 @@ async function modify_cart_quantity(e) {
   if (units > quantity) {
     units -= quantity;
     const modify_cart_quantity = await fetch(
-      `/api/carts/9/product/${pid}/${units}`,
+      `/api/cartsDB/64874ecf7ac94944740664a1/product/${pid}/${units}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -21,7 +21,7 @@ async function modify_cart_quantity(e) {
   if (units < quantity) {
     units = quantity - units;
     const modify_cart_quantity = await fetch(
-      `/api/carts/9/product/${pid}/${units}`,
+      `/api/cartsDB/64874ecf7ac94944740664a1/product/${pid}/${units}`,
       {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
@@ -33,7 +33,7 @@ async function modify_cart_quantity(e) {
 
 async function delete_cart_product(pid, quantity) {
   const modify_cart_products = await fetch(
-    `/api/carts/9/product/${pid}/${quantity}`,
+    `/api/cartsDB/64874ecf7ac94944740664a1/product/${pid}/${quantity}`,
     {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },

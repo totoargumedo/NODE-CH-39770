@@ -139,15 +139,15 @@
     "products": [
       {
         "pid": 6,
-        "quantity": 7
-      },
-      {
-        "pid": 3,
         "quantity": 1
       },
       {
         "pid": 12,
         "quantity": 6
+      },
+      {
+        "pid": 14,
+        "quantity": 2
       }
     ]
   }

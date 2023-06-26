@@ -1,5 +1,5 @@
 {
-  "name": "sprint-5",
+  "name": "sprint-6",
   "version": "1.0.0",
   "type": "module",
   "main": "main.js",
@@ -13,8 +13,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.7",
+    "mongoose": "^7.2.2",
     "socket.io": "^4.6.1"
   }
 }

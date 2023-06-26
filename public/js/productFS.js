@@ -7,7 +7,7 @@ add_cart.addEventListener("submit", async (e) => {
 });
 
 async function send_cart(pid, units) {
-  const send_cart_data = await fetch(`/api/carts/9/product/${pid}/${units}`, {
+  const send_cart_data = await fetch(`/api/cartsFS/9/product/${pid}/${units}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
   })
