@@ -41,90 +41,55 @@ Pantalla de productos en carrito en DB con id "64874ecf7ac94944740664a1", tiene 
 PREGUNTANOS / ICONO DE CHAT -> /chat
 Pantalla de chat con chatbot, presenta opciones y reconoce las opciones indicadas por numero. Tambien devuelve busquedas de producto cuando el chat incluye "/buscar alguna busqueda"
 
-4- Endpoints Productos ----- Se crearon 2 rutas en paralelo
---> Para productos
-/api/productsFS y /api/productsDB
---> Para carritos
-/api/cartsFS y /api/cartsDB
+4- Endpoints Productos
 
-GET -> /api/productsFS
-Devuelve todos los productos cargados en FS
-GET -> /api/productsDB
+GET -> /api/products
 Devuelve todos los productos cargados en DB
 
-GET -> /api/productsFS?limit=1
-Devuelve los primeros n productos en FS, donde n es el numero asignado a limit
-GET -> /api/productsDB?limit=1
-Devuelve los primeros n productos en DB, donde n es el numero asignado a limit
+GET -> /api/products?page=1&limit=10$title=sable
+Puede recibir las siguientes queries para paginar, page para indicar en que pagina esta (default es 1) y debe mostrar, y tambien limit para mostrar un numero limitado de resultados (default 6).
+Tambien recibe query y devuelve los objetos que incluyan el string buscado en el campo title, no distingue entre minusculas y mayusculas
 
-GET -> /api/productsFS/:pid
-GET -> /api/productsFS/1
+GET -> /api/products?page=1&limit=10&title=Luke
+Tambien puede recibir query de busqueda utilizando title, no filtra por mayus y minus y devuelve los resultados que incluyan lo buscado en el campo title
+
+GET -> /api/products/:pid
+GET -> /api/products/1
 Devuelve el producto con id 1
 
-GET -> /api/productsDB/:pid
-GET -> /api/productsDB/1
-Devuelve el producto con id 1
+POST -> /api/products
+Crea un producto nuevo, devuelve el id del producto, recibe objetos en JSON con el siguiente formato
+{title: String, description: String, price: Number, code: String-unique, thumbnail: String, stock: Number}
 
-POST -> /api/productsFS
-POST -> /api/productsDB
+PUT -> /api/products/:pid
+PUT -> /api/products/64874ecf7ac94944740664a1
 
-Crea un producto nuevo, devuelve el id del producto
+Modifica un producto existe con id 1 o 64874ecf7ac94944740664a1, recibe un objeto con las siguientes propiedades {title: String, description: String, price: Number, code: String-unique, thumbnail: String, stock: Number}
 
-PUT -> /api/productsFS/:pid
-PUT -> /api/productsFS/1
-PUT -> /api/productsDB/:pid
-PUT -> /api/productsDB/64874ecf7ac94944740664a1
-
-Modifica un producto existe con id 1 o 64874ecf7ac94944740664a1, recibe un objeto con las siguientes propiedades {
-title,
-description,
-price,
-code,
-thumbnail,
-stock,
-}
-
-DELETE -> /api/productsFS/:pid
-DELETE -> /api/productsFS/1
-DELETE -> /api/productsDB/:pid
-DELETE -> /api/productsDB/64874ecf7ac94944740664a1
-
-Elimina el producto con id 1 o 64874ecf7ac94944740664a1
+DELETE -> /api/products/:pid
+DELETE -> /api/products/64874ecf7ac94944740664a1
+Elimina el producto con id 64874ecf7ac94944740664a1
 
 5- Endpoints Carritos
 
-GET -> /api/cartsFS
-GET -> /api/cartsDB
-
+GET -> /api/carts
 Devuelve todos los carritos cargados
 
-GET -> /api/cartsFS/:cid
-GET -> /api/cartsFS/1
-GET -> /api/cartsDB/:cid
-GET -> /api/cartsDB/1
+GET -> /api/carts/:cid
+GET -> /api/carts/1
+Devuelve el carrito con id 1 junto con los productos cargados
 
-Devuelve el carrito con id 1
-
-GET -> /api/cartsFS/1?totalItems=true
-GET -> /api/cartsDB/1?totalItems=true
-
-Devuelve el total de items en el carrito con id 1
-
-POST -> /api/cartsFS
-POST -> /api/cartsDB
-
+POST -> /api/carts
 Crea un carrito nuevo y devuelve el id
 
-PUT -> /api/cartsFS/:cid/product/:pid/:units
-PUT -> /api/cartsFS/1/product/1/3
-PUT -> /api/cartsDB/:cid/product/:pid/:units
-PUT -> /api/cartsDB/1/product/1/3
+PUT -> /api/carts/:cid/product/:pid/:units
+PUT -> /api/carts/1/product/1/3
+Agrega 3 unidades del producto con id 1 al carrito con id 1. No se pueden agregar mas productos de los que el producto tiene en stock, se restan del stock de producto
 
-Agrega 3 unidades del producto con id 1 al carrito con id 1. No se pueden agregar mas productos de los que el producto tiene en stock
+DELETE -> /api/carts/:cid/product/:pid/:units
+DELETE -> /api/carts/1/product/1/3
+Quita 3 unidades del producto con id 1 desde carrito con id 1. Si se quitan todos los productos directamente lo quita del carrito, devuelve los productos al stock
 
-DELETE -> /api/cartsFS/:cid/product/:pid/:units
-DELETE -> /api/cartsFS/1/product/1/3
-DELETE -> /api/cartsDB/:cid/product/:pid/:units
-DELETE -> /api/cartsDB/1/product/1/3
-
-Quira 3 unidades del producto con id 1 desde carrito con id 1. Si se quitan todos los productos directamente lo quita del carrito
+GET -> /api/carts/bills/:cid
+GET -> /api/carts/bills/1
+Devuelve el costo total de lo que esta cargado en el carrito con id 1

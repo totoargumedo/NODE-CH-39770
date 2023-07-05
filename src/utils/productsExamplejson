@@ -1,0 +1,234 @@
+[
+  {
+    "title": "Sable de luz de Luke Skywalker",
+    "description": "Auténtico sable de luz utilizado por Luke Skywalker en la saga de Star Wars.",
+    "price": 199.99,
+    "code": "LSK123",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/1_15.jpg?v=1653499529",
+    "stock": 50
+  },
+  {
+    "title": "Sable de luz de Darth Vader",
+    "description": "Réplica de sable de luz inspirado en el arma de Darth Vader en Star Wars.",
+    "price": 249.99,
+    "code": "VDR456",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/X5A7957.jpg?v=1658884133&width=1680",
+    "stock": 30
+  },
+  {
+    "title": "Sable de luz de Yoda",
+    "description": "Sable de luz característico del Maestro Yoda, pequeño pero poderoso.",
+    "price": 149.99,
+    "code": "YOD789",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/X5A0034.jpg?v=1658887710&width=1680",
+    "stock": 20
+  },
+  {
+    "title": "Sable de luz de Obi-Wan Kenobi",
+    "description": "El sable de luz elegante y sofisticado del legendario Jedi Obi-Wan Kenobi.",
+    "price": 179.99,
+    "code": "OBW567",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/15_40919633-45e1-438f-9a06-aa7106770644.jpg?v=1653500423",
+    "stock": 40
+  },
+  {
+    "title": "Sable de luz de Anakin Skywalker",
+    "description": "Réplica del icónico sable de luz de Anakin Skywalker, el Elegido.",
+    "price": 199.99,
+    "code": "ANS234",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/2X5A23152.jpg?v=1653501150",
+    "stock": 25
+  },
+  {
+    "title": "Sable de luz de Mace Windu",
+    "description": "Sable de luz morado distintivo del maestro Jedi Mace Windu.",
+    "price": 179.99,
+    "code": "MCW901",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/X5A8895.jpg?v=1653504925&width=1680",
+    "stock": 15
+  },
+  {
+    "title": "Sable de luz de Kylo Ren",
+    "description": "Réplica del sable de luz inestable y temible de Kylo Ren.",
+    "price": 229.99,
+    "code": "KLR567",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/X5A4853.jpg?v=1658883874&width=1680",
+    "stock": 35
+  },
+  {
+    "title": "Sable de luz de Rey",
+    "description": "Sable de luz utilizado por la valiente Jedi Rey en la lucha contra el Lado Oscuro.",
+    "price": 189.99,
+    "code": "REY345",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/MG_7816.jpg?v=1658884910&width=1680",
+    "stock": 30
+  },
+  {
+    "title": "Sable de luz de Count Dooku",
+    "description": "Réplica del sable de luz curvado de Count Dooku, antiguo Maestro Jedi caído.",
+    "price": 199.99,
+    "code": "CDK678",
+    "thumbnail": "https://cdnx.jumpseller.com/star-blade/image/34599240/resize/640/640?1683248569",
+    "stock": 20
+  },
+  {
+    "title": "Sable de luz de Qui-Gon Jinn",
+    "description": "El sable de luz utilizado por el sabio y noble Jedi Qui-Gon Jinn.",
+    "price": 179.99,
+    "code": "QGJ012",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/MG_98383_f267db70-79ff-4881-a118-1aeaec77b41f.jpg?v=1653505151",
+    "stock": 25
+  },
+  {
+    "title": "Sable de luz de Ahsoka Tano",
+    "description": "Réplica del sable de luz de doble hoja de la valiente Jedi Ahsoka Tano.",
+    "price": 219.99,
+    "code": "AST789",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/X5A7548.jpg?v=1658887197&width=1680",
+    "stock": 15
+  },
+  {
+    "title": "Sable de luz de Darth Maul",
+    "description": "Réplica del sable de luz de doble hoja del malvado Darth Maul.",
+    "price": 249.99,
+    "code": "DMU345",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/5_ba9a1069-09fa-4519-a514-ae92e438fc0b.jpg?v=1658884375",
+    "stock": 20
+  },
+  {
+    "title": "Sable de luz de Ezra Bridger",
+    "description": "El sable de luz modificado y único del valiente Jedi Ezra Bridger.",
+    "price": 189.99,
+    "code": "EZB567",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/X5A48012.jpg?v=1658893487&width=1680",
+    "stock": 30
+  },
+  {
+    "title": "Sable de luz de Plo Koon",
+    "description": "El sable de luz utilizado por el Maestro Jedi Plo Koon, reconocible por su color amarillo.",
+    "price": 199.99,
+    "code": "PLK901",
+    "thumbnail": "https://i.ebayimg.com/images/g/Ng4AAOSwZ~BkMGX5/s-l500.jpg",
+    "stock": 20
+  },
+  {
+    "title": "Sable de luz de Kit Fisto",
+    "description": "El sable de luz del pacífico y habilidoso Jedi Kit Fisto, con una hoja verde.",
+    "price": 179.99,
+    "code": "KTF234",
+    "thumbnail": "https://i.pinimg.com/564x/db/06/32/db0632d39d6bfcaf3e4f1cb7a1c19b32.jpg",
+    "stock": 25
+  },
+  {
+    "title": "Sable de luz de Asajj Ventress",
+    "description": "Réplica del sable de luz doble característico de la letal Sith Asajj Ventress.",
+    "price": 229.99,
+    "code": "ASV567",
+    "thumbnail": "https://i.pinimg.com/564x/00/2b/5d/002b5dde65924fb492539c684e38bf53.jpg",
+    "stock": 15
+  },
+  {
+    "title": "Sable de luz de Jango Fett",
+    "description": "Réplica del sable de luz de Jango Fett, cazarrecompensas y maestro de combate.",
+    "price": 199.99,
+    "code": "JFT901",
+    "thumbnail": "https://i.pinimg.com/564x/eb/cc/1f/ebcc1f669e098159cf225b161f3eb1b7.jpg",
+    "stock": 20
+  },
+  {
+    "title": "Sable de luz de General Grievous",
+    "description": "Réplica del sable de luz de cuatro hojas del temido cyborg General Grievous.",
+    "price": 249.99,
+    "code": "GRV345",
+    "thumbnail": "https://i0.wp.com/sabersourcing.com/wp-content/uploads/2018/10/ultrasabers-guardian-empty-hilt-1.jpg?resize=936%2C1024&ssl=1",
+    "stock": 20
+  },
+  {
+    "title": "Sable de luz de Aayla Secura",
+    "description": "El sable de luz de la hábil y valiente Jedi Twi'lek Aayla Secura, con hoja azul.",
+    "price": 189.99,
+    "code": "AAS567",
+    "thumbnail": "https://i.pinimg.com/564x/79/80/f7/7980f705f6c510522781a449dca89cac.jpg",
+    "stock": 30
+  },
+  {
+    "title": "Sable de luz de Savage Opress",
+    "description": "Réplica del sable de luz doble del poderoso guerrero Sith Savage Opress.",
+    "price": 229.99,
+    "code": "SOP234",
+    "thumbnail": "https://cdnx.jumpseller.com/star-blade/image/34187381/resize/640/640?1681627075",
+    "stock": 15
+  },
+  {
+    "title": "Sable de Luz de Cal Kestis",
+    "description": "Sable de luz de Cal Kestis, un sobreviviente de la Purga y protagonista de Jedi: Fallen Order. Tiene un diseño unico y porta hoja azul.",
+    "price": 199.99,
+    "code": "CLB001",
+    "thumbnail": "https://cdnx.jumpseller.com/star-blade/image/26435248/resize/640/640?1660756770",
+    "stock": 20
+  },
+  {
+    "title": "Sable de Luz de Cere Junda",
+    "description": "Sable de luz portado por Cere Junda, mentora y compañera de Cal Kestis durante los eventos de Jedi: Fallen Order",
+    "price": 179.99,
+    "code": "CEJ003",
+    "thumbnail": "https://example.com/cere_junda_lightsaber.jpg",
+    "stock": 15
+  },
+  {
+    "title": "Sable de Luz de Kanan Jarrus",
+    "description": "Sable de luz de kanan Jarrus, Caballero Jedi sobreviviente de la Purga convertido en Rebelde y Maestro de Erza Bridger.",
+    "price": 189.99,
+    "code": "KAN002",
+    "thumbnail": "https://cdnx.jumpseller.com/star-blade/image/22433021/resize/640/640?1657720319",
+    "stock": 15
+  },
+   {
+    "title": "Darksaber",
+    "description": "El unico sable de luz de hoja negra, simbolo de liderazgo Mandaloriano, portado por el Mandalore durante varias generaciones. Reaparecido recientemente luego de su perdida en la Purga de Mandalore.",
+    "price": 249.99,
+    "code": "DRK004",
+    "thumbnail": "https://cdnx.jumpseller.com/star-blade/image/27593723/resize/640/640?1664247400",
+    "stock": 10
+  },
+  {
+    "title": "Sable de Luz de Eno Cordova",
+    "description": "Sable del maestro Jedi Eno Cordova, arqueologo y sobreviviente a la Purga, busca los restos de una antigua orden Jedi.",
+    "price": 189.99,
+    "code": "ENC002",
+    "thumbnail": "https://i.pinimg.com/564x/0f/25/c5/0f25c5c49a1be04d84a03ccbde02c418.jpg",
+    "stock": 15
+  },
+  {
+    "title": "Sables de Luz de Darth Revan",
+    "description": "Sables duales del Lord Sith Darth Revan, dejo la orden y cayo al lado oscuro luego de participaren las guerras mandalorianas.",
+    "price": 189.99,
+    "code": "DRV002",
+    "thumbnail": "https://cdnx.jumpseller.com/star-blade/image/19702612/resize/640/640?1657719550",
+    "stock": 15
+  },
+   {
+    "title": "Sable de Luz de Starkiller",
+    "description": "Sable de luz de Starkiller, unico discipulo de Darth Vader, fue tomado de su caza luego de que Vader asesinara a su padre Jedi para ser convertido en un guerrero Sith, para luego encontrarse con el lado de la luz.",
+    "price": 189.99,
+    "code": "STK002",
+    "thumbnail": "https://cdnx.jumpseller.com/star-blade/image/23751115/resize/640/640?1657720603",
+    "stock": 15
+  },
+  {
+    "title": "Sable de Luz del Gran Inquisidor",
+    "description": "Sable de luz portado por el Gran Inquisidor, lider de la facción de inquisidores, Jedis caidos al lado oscuro que conformaron un unidad de cazadores expertos al mando de Darth Vader.",
+    "price": 189.99,
+    "code": "GI002",
+    "thumbnail": "https://cdnx.jumpseller.com/star-blade/image/23751115/resize/640/640?1657720603",
+    "stock": 15
+  },
+  {
+    "title": "Sable de Luz de Darth Sidious",
+    "description": "Sable de luz perteneciente al Emperador Palpatine, tomo el poder de la republica y se convirtio en su unico lider, renombrandola imperio galactico.",
+    "price": 189.99,
+    "code": "DSP001",
+    "thumbnail": "https://cdn.shopify.com/s/files/1/0560/2502/2615/products/X5A25341.jpg?v=1658886767&width=1680",
+    "stock": 15
+  }
+]

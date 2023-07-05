@@ -21,7 +21,7 @@ function renderMessageAsistance(data) {
   //redireccionar a pagina de productos
   if (data.products) {
     data.products.forEach((product) => {
-      message_text += `<a href="/products/${product.id}" class="small mb-0 d-block">${product.title}</a>`;
+      message_text += `<a href="./product.html?pid=${product._id}" class="small mb-0 d-block">${product.title}</a>`;
     });
   }
 
@@ -84,20 +84,3 @@ socket.on("bot-welcome", (data) => {
 socket.on("message-response", (data) => {
   renderMessageAsistance(data);
 });
-
-// renderMessageAsistance({
-//   id: 1,
-//   message:
-//     "Bienvenido a la tienda Rebelde, mi nombre es Obi y estare encantado de asistirle.",
-//   options: [
-//     { id: 1, message: "Ayuda con productos." },
-//     { id: 2, message: "Ayuda con carrito." },
-//     { id: 3, message: "Contactar con atención al cliente." },
-//     { id: 4, message: "Otras opciones." },
-//   ],
-// });
-
-// renderMessageClient({
-//   id: 1,
-//   message: "Hola! quiero asistencia con 1",
-// });
